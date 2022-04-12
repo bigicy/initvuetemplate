@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        // compile the template
+        var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+        // execute the compiled template and print the output to the console
+        console.log(template({ doesWhat: "rocks!" }));
+    </script>
+  </head>
+  <body>
+    <script type="text/x-handlebars-template" id="student-temp">
+        <p>{{firstname}} {{lastname}}</p>
+    </script>
+    <script>
+         //    模拟数据
+        var firstname = '第一个名字'
+        var lastname = '最后一个名字'
+        //    获取到handlebars这个模板中的全部html内容
+        var studentTemp = $('#student-temp').html();
+        //    编译
+        var HanStudent = Handlebars.compile(studentTemp);
+        //把编译完成的代码放入到 .student-temp 的这个容器中
+        $('.student-temp').html(HanStudent(firstname)) 
+        $('.student-temp').html(HanStudent(lastname)) 
+    </script>
+    <div>测试Handlebars语法</div>
+    
+    <!-- built files will be auto injected -->
+  </body>
+</html>
