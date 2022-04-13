@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .home{
   background-color: #efefef;
 }

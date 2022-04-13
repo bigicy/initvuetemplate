@@ -99,67 +99,6 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-.upload{
-  background-color: #efefef;
-  .title{
-    padding: 12px;
-    font-size: 15px;
-    font-weight: bold;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-    background-color: white;
-  }
-  .tip{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    margin-top: 10px;
-    background-color: white;
-    .name{
-      font-size: 15px;
-      font-weight: bold;
-    }
-    .content{
-      border: 1px solid @greenColor;
-      padding: 5px 10px;
-      font-weight: bold;
-      font-size: 13px;
-      border-radius: 10px;
-      color: @greenColor;
-      width: 120px;
-    }
-  }
-  .upload{
-    text-align: left;
-    padding: 10px;
-    background-color: white;
-  }
-  .action{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #efefef;
-    padding: 20px;
-    .cancel{
-      width: 120px;
-      padding: 10px;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      background-color: #d6d8db;
-    }
-    .sumbit{
-      width: 120px;
-      padding: 10px;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      color: white;
-      background-color: @greenColor;
-    }
-  }
-}
+<style scoped>
+
 </style>
