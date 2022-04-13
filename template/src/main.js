@@ -11,6 +11,11 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 {{/if_eq}}
+{{#if_eq thirdParty "vant"}}
+import vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(vant);
+{{/if_eq}}
 {{#if_eq thirdParty "ant-design-vue"}}
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
