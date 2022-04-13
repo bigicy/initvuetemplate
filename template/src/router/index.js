@@ -1,21 +1,19 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Router from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'index',
+      component: (resolve) => require(["@/components/home"], resolve),
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: (resolve) => require(["@/components/upload"], resolve),
+    },
+  ]
 })
-
-export default router

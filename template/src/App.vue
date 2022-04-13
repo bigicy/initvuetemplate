@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      {{#router}}
-      <router-link to="/">Home</router-link>
-      {{/router}}
-    </div>
     {{#router}}
     <router-view/>
     {{/router}}
