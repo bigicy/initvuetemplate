@@ -94,6 +94,11 @@ module.exports = {
           short: 'ant-design-vue',
         },
         {
+          name: 'jquery',
+          value: 'jquery',
+          short: 'jquery',
+        },
+        {
           name: 'vant',
           value: 'vant',
           short: 'vant',
