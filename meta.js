@@ -33,6 +33,15 @@ module.exports = {
   },
   
   prompts: {
+    /* type(类型):input(输入，默认类型), confirm（y/n）, list(列表), rawlist（带下标的列表）,
+                 expand（下标是字母的列表）, checkbox（复选框）, password（密码）, 
+                 editor（编辑大篇文字）*/
+    /* 
+      massage(提示信息——问题):字符串或者函数，如果是函数，返回值需要时字符串
+    */
+    /* default: （默认值） */
+    /* choices（选项）: list,rawlist,expand,checkbox类型需要给出相应的choice供用户选择 */
+    /* validate(有效性验证): 函数类型，参数是用户输入的结果，通过返回true，否则返回验证失败的提示。 */
     name: {
       when: 'isNotTest',
       type: 'string',

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Handlebars语法</title>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        // compile the template
+        var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+        // execute the compiled template and print the output to the console
+        console.log(template({ doesWhat: "rocks!" }));
+    </script>
+  </head>
+  <body>
+    <p style="text-align: center;">测试Handlebars语法</p>
+
+    <script type="text/template" id="myTemplate">
+        <div style="text-align: center;">
+            <p>模板内容</p>
+            <p>{{firstname}}</p>
+            <p>{{{specialChars}}}</p>
+            <p>{{lastname}}</p>
+        </div>
+    </script>
+    <div id="box"></div>
+    <script>
+        // 定义模板
+         var tpl = $("#myTemplate").html();
+        // 预编译模板
+        var template = Handlebars.compile(tpl);
+        // 匹配json内容
+        var data = {firstname: '名字', lastname: '姓氏', specialChars:'非转义字符'}
+        var html = template(data);
+        // 输入模板
+        $('#box').html(html);
+        console.log('html-----',html)
+    </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
