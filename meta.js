@@ -81,7 +81,7 @@ module.exports = {
     thirdParty: {
       when: 'isNotTest',
       type: 'list',
-      message: 'Which third party component library to choose?',
+      message: 'Which 第三方 component library to choose?',
       choices: [
         {
           name: 'element-ui',
@@ -92,6 +92,11 @@ module.exports = {
           name: 'ant-design-vue',
           value: 'ant-design-vue',
           short: 'ant-design-vue',
+        },
+        {
+          name: 'vant',
+          value: 'vant',
+          short: 'vant',
         },
         {
           name: 'other',
