@@ -16,7 +16,15 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 Vue.use(Antd);
 {{/if_eq}}
-
+import http from "./libs/http"
+import Vant from 'vant';
+import 'vant/lib/index.css';
+import "./base/base.css"
+import Vconsole from 'vconsole'
+let vConsole = new Vconsole()
+Vue.use(vConsole)
+Vue.use(Vant);
+Vue.use(http);
 Vue.config.productionTip = false
 
 new Vue({
@@ -25,6 +33,8 @@ new Vue({
   {{/router}}
   {{#vuex}}
   store,
+  http,
+  Vant,
   {{/vuex}}
   render: h => h(App)
 }).$mount('#app')
