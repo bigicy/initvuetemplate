@@ -20,7 +20,10 @@ module.exports = {
             chunkFilename: '[id].[contenthash].css'
         }),
         new HtmlWebpackPlugin({             //实例化Html模板模块
-            template: path.resolve(__dirname, '../index.html')
+            template: path.resolve(__dirname, '../public/index.html'),
+            favicon: './public/favicon.ico',
+            // filename: './public/index.html',
+            manifest: './public/manifest.json'
         }),
         new CleanWebpackPlugin(), 
     ],
@@ -45,7 +48,7 @@ module.exports = {
                 include: path.join(__dirname, '../src')
             },
             {                                                 //此处再添加一条rules，用于配置css预处理器信息
-                test: /\.less$/,
+                test: /\.(less|css)$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -53,21 +56,13 @@ module.exports = {
                     {
                         loader: 'css-loader'
                     }, 
-                    {   //自动添加浏览器前缀
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: [
-                                require('autoprefixer')
-                            ]
-                        }
-                    },
                     {
                         loader: 'less-loader'
                     }
                 ]
             },
             {   //配置图片静态资源的打包信息
-                test: /\.(jpg|png|jpeg|gif)$/,
+                test: /\.(jpg|png|jpeg|gif|svg)$/,
                 use: [
                     {
                         loader: 'url-loader',
@@ -119,7 +114,17 @@ module.exports = {
         hot: true,
         open: true,
         port: 3500,
-        contentBase: '../dist'
+        static: '../dist',  // 更换static
+        historyApiFallback: true,
+        proxy:{
+            '/api':{
+                target: 'http:// localhost:3000',
+                pathRewrite:{
+                    '^api': '/api'
+                },
+                changeOrigin: true
+            }
+        }
     }
 };
 
