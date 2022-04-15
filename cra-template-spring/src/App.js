@@ -1,14 +1,17 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from "react-router-dom";
 import ComponentOne from "./pages/ComponentOne";
 import ComponentTwo from "./pages/ComponentTwo";
+import Home from "./pages/Home";
 import routes from '../src/router/routers'
 import Redirect from "../src/components/Redirect";
+import { createBrowserHistory } from "history";
+const browserHistory = createBrowserHistory();
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 //
@@ -21,12 +24,13 @@ import Redirect from "../src/components/Redirect";
 export default function App() {
   return (
       <div>
-        <Router>
+        <Router history={browserHistory}>
           <Routes>
             {/* <Route exact path="/" element={<Redirect to="/test" />} /> */}
             <Route path="/" element={<ComponentOne />} /> 
             <Route path="/test" element={<ComponentTwo />} />
             <Route path="/mat" element={<ComponentOne />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </Router>
       </div>
@@ -36,27 +40,4 @@ export default function App() {
 // You can think of these components as "pages"
 // in your app.
 
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
 

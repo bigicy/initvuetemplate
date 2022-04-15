@@ -1,6 +1,5 @@
 //组件一代码
 import React,{ Component } from 'react';
-import axios from 'axios'
 class ComponentOne extends Component {
 
     render () {

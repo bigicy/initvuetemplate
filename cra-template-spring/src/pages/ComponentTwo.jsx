@@ -1,10 +1,10 @@
 import React,{ Component } from 'react';
-import axios from 'axios';
+import { get } from '../server/server';
 
 class ComponentTwo extends Component {
 
     componentDidMount () {
-        axios.get('http://localhost:3000/api/xuqw').then(res => {
+       get('/api/xuqw').then(res => {
             console.log(res);
         })
     }
@@ -13,6 +13,7 @@ class ComponentTwo extends Component {
         return (
             <div>
                 <h3>组件22222</h3>
+                <div className='lesstest'>测试less</div>
             </div>
         )
     }

@@ -8,7 +8,16 @@ const babelConfig = {
         }], "@babel/preset-react"
     ],
     //就是在此处添加了两个@babel/runtime中的插件
-    plugins: ["@babel/plugin-syntax-dynamic-import", ["@babel/plugin-transform-runtime"]]  
+    plugins: [
+        "@babel/plugin-syntax-dynamic-import", 
+        ["@babel/plugin-transform-runtime"],
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ]
+    ]  
 };
 
 module.exports = babelConfig;
